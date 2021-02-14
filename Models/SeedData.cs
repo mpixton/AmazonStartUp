@@ -51,7 +51,7 @@ namespace AmazonStartUp.Models
                     {
                         ISBN = "978-0812974492",
                         Price = 13.33M,
-                        Title = "Unbrokwn"
+                        Title = "Unbroken"
                     },
                     new Book
                     {
