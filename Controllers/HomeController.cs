@@ -13,14 +13,17 @@ namespace AmazonStartUp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private IAmazonRepo _amazonRepo;
+
+        public HomeController(ILogger<HomeController> logger, IAmazonRepo repo)
         {
             _logger = logger;
+            _amazonRepo = repo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_amazonRepo.Books);
         }
 
         public IActionResult Privacy()

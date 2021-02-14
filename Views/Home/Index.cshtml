@@ -2,6 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model IQueryable<Book>
+
 <div class="text-center">
-    <h1 class="display-4">Home Page</h1>
+    <h1 class="display-4">We did it.</h1>
 </div>
+
+@foreach (Book b in Model)
+{
+<div>
+    <div>@b.Title</div>
+    <div>@b.ISBN</div>
+    <div>@b.Price</div>
+</div>   
+}
