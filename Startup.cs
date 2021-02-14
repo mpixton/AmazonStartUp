@@ -28,7 +28,7 @@ namespace AmazonStartUp
             services.AddControllersWithViews();
             services.AddDbContext<AmazonDBContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectectionStrings:AmazonStartUpConnection"]);
+                options.UseSqlServer(Configuration["ConnectionStrings:AmazonStartUpConnection"]);
             });
             services.AddScoped<IAmazonRepo, EFAmazonRepo>();
         }

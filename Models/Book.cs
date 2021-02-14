@@ -12,7 +12,12 @@ namespace AmazonStartUp.Models
     public class Book
     {
         /// <summary>
-        /// International Standard Book Number of the Book. Primary key of the model's table.
+        /// Primary Key of the Book table.
+        /// </summary>
+        [Key]
+        public int BookId { get; set; }
+        /// <summary>
+        /// International Standard Book Number of the Book.
         /// </summary>
         [Required]
         [RegularExpression(@"^[0-9]{3}-[0-9]{10}$",
