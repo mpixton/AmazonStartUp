@@ -27,61 +27,113 @@ namespace AmazonStartUp.Models
                     {
                         ISBN = "978-0451419439",
                         Price = 9.95M,
-                        Title = "Les Miserables"
+                        Title = "Les Miserables",
+                        AuthFirstName = "Victor",
+                        AuthLastName = "Hugo",
+                        Publisher = "Signet",
+                        Classification = Classification.Fiction,
+                        Category = Category.Classic
                     },
                     new Book
                     {
                         ISBN = "978-0743270755",
                         Price = 14.58M,
-                        Title = "Team of Rivals"
+                        Title = "Team of Rivals",
+                        AuthFirstName = "Doris",
+                        AuthMidName = "Kearns",
+                        AuthLastName = "Goodwin",
+                        Publisher = "Simon & Schuster",
+                        Classification = Classification.NonFiction,
+                        Category = Category.Biography
                     },
                     new Book
                     {
                         ISBN = "978-0553384611",
                         Price = 21.54M,
-                        Title= "The Snowball"
+                        Title= "The Snowball",
+                        AuthFirstName = "Alice",
+                        AuthLastName = "Schroeder",
+                        Publisher = "Bantam",
+                        Classification = Classification.NonFiction,
+                        Category = Category.Biography
                     },
                     new Book
                     {
                         ISBN = "978-0812981254",
                         Price = 11.61M,
-                        Title = "American Ulysses"
+                        Title = "American Ulysses",
+                        AuthFirstName = "Ronald",
+                        AuthMidName = "C.",
+                        AuthLastName = "White",
+                        Publisher = "Random House",
+                        Classification = Classification.NonFiction,
+                        Category = Category.Biography
                     },
                     new Book
                     {
                         ISBN = "978-0812974492",
                         Price = 13.33M,
-                        Title = "Unbroken"
+                        Title = "Unbroken",
+                        AuthFirstName = "Laura",
+                        AuthLastName = "Hillenbrand",
+                        Publisher= "Random House",
+                        Classification = Classification.NonFiction,
+                        Category = Category.Historical
                     },
                     new Book
                     {
                         ISBN = "978-0804171281",
                         Price = 15.95M,
-                        Title = "The Great Train Robbery"
+                        Title = "The Great Train Robbery",
+                        AuthFirstName = "Michael",
+                        AuthLastName = "Crichton",
+                        Publisher = "Vintage",
+                        Classification = Classification.Fiction,
+                        Category = Category.Historical
                     },
                     new Book
                     {
                         ISBN = "978-1455586691",
                         Price = 14.99M,
-                        Title = "Deep Work"
+                        Title = "Deep Work",
+                        AuthFirstName = "Cal",
+                        AuthLastName = "Newport",
+                        Publisher = "Grand Central Publishing",
+                        Classification = Classification.NonFiction,
+                        Category = Category.SelfHelp
                     },
                     new Book
                     {
                         ISBN = "978-1455523023",
                         Price = 21.66M,
-                        Title = "It's Your Ship"
+                        Title = "It's Your Ship",
+                        AuthFirstName = "Michael",
+                        AuthLastName = "Abrashoff",
+                        Publisher = "Grand Central Publishing",
+                        Classification = Classification.NonFiction,
+                        Category = Category.SelfHelp
                     },
                     new Book
                     {
                         ISBN = "978-1591847984",
                         Price = 29.16M,
-                        Title = "The Virgin Way"
+                        Title = "The Virgin Way",
+                        AuthFirstName = "Richard",
+                        AuthLastName = "Branson",
+                        Publisher = "Portfolio",
+                        Classification = Classification.NonFiction,
+                        Category = Category.Business
                     },
                     new Book
                     {
                         ISBN = "978-0553393613",
                         Price = 15.03M,
-                        Title = "Sycamore Row"
+                        Title = "Sycamore Row",
+                        AuthFirstName = "John",
+                        AuthLastName = "Grisham",
+                        Publisher = "Bantam",
+                        Classification = Classification.Fiction,
+                        Category = Category.Thriller
                     }
                 );
 

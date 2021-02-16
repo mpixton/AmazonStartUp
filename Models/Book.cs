@@ -1,11 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AmazonStartUp.Models
 {
+    public enum Classification
+    {
+        Fiction,
+        [Description("Non-Fiction")]
+        NonFiction
+    }
+
+    public enum Category
+    {
+        Classic,
+        Biography,
+        Historical,
+        [Description("Self-Help")]
+        SelfHelp,
+        Business,
+        Thriller
+    }
+
     /// <summary>
     /// Represents a Book. Author, Publisher, Category, and Sub-Category are all related to Book, but stored in their own model.
     /// </summary>
@@ -16,6 +36,7 @@ namespace AmazonStartUp.Models
         /// </summary>
         [Key]
         public int BookId { get; set; }
+
         /// <summary>
         /// International Standard Book Number of the Book.
         /// </summary>
@@ -34,6 +55,43 @@ namespace AmazonStartUp.Models
         /// Price of the Book.
         /// </summary>
         [Required]
+        [Column(TypeName="decimal(6,2)")]
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// First Name of the Author of the Book.
+        /// </summary>
+        [Required]
+        public string AuthFirstName { get; set; }
+
+        /// <summary>
+        /// Middle Name of the Author of the Book (if applicable).
+        /// </summary>
+        [Required]
+        public string AuthMidName { get; set; }
+
+        /// <summary>
+        /// Last Name of the Author of the Book.
+        /// </summary>
+        [Required]
+        public string AuthLastName { get; set; }
+
+        /// <summary>
+        /// Publisher of the Book.
+        /// </summary>
+        [Required]
+        public string Publisher { get; set; }
+
+        /// <summary>
+        /// Classification of the Book. Enum.
+        /// </summary>
+        [Required]
+        public Classification Classification { get; set; }
+
+        /// <summary>
+        /// Category of the Book within the Classification. Enum.
+        /// </summary>
+        [Required]
+        public Category Category { get; set; }
     }
 }
