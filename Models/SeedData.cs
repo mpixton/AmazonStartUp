@@ -31,8 +31,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Victor",
                         AuthLastName = "Hugo",
                         Publisher = "Signet",
-                        Classification = Classification.Fiction,
-                        Category = Category.Classic
+                        Classification = "Fiction",
+                        Category = "Classic"
                     },
                     new Book
                     {
@@ -43,8 +43,8 @@ namespace AmazonStartUp.Models
                         AuthMidName = "Kearns",
                         AuthLastName = "Goodwin",
                         Publisher = "Simon & Schuster",
-                        Classification = Classification.NonFiction,
-                        Category = Category.Biography
+                        Classification = "Non-Fiction",
+                        Category = "Biography"
                     },
                     new Book
                     {
@@ -54,8 +54,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Alice",
                         AuthLastName = "Schroeder",
                         Publisher = "Bantam",
-                        Classification = Classification.NonFiction,
-                        Category = Category.Biography
+                        Classification = "Non-Fiction",
+                        Category = "Biography"
                     },
                     new Book
                     {
@@ -66,8 +66,8 @@ namespace AmazonStartUp.Models
                         AuthMidName = "C.",
                         AuthLastName = "White",
                         Publisher = "Random House",
-                        Classification = Classification.NonFiction,
-                        Category = Category.Biography
+                        Classification = "Non-Fiction",
+                        Category = "Biography"
                     },
                     new Book
                     {
@@ -77,8 +77,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Laura",
                         AuthLastName = "Hillenbrand",
                         Publisher= "Random House",
-                        Classification = Classification.NonFiction,
-                        Category = Category.Historical
+                        Classification = "Non-Fiction",
+                        Category = "Historical"
                     },
                     new Book
                     {
@@ -88,8 +88,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Michael",
                         AuthLastName = "Crichton",
                         Publisher = "Vintage",
-                        Classification = Classification.Fiction,
-                        Category = Category.Historical
+                        Classification = "Fiction",
+                        Category = "Historical"
                     },
                     new Book
                     {
@@ -99,8 +99,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Cal",
                         AuthLastName = "Newport",
                         Publisher = "Grand Central Publishing",
-                        Classification = Classification.NonFiction,
-                        Category = Category.SelfHelp
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help"
                     },
                     new Book
                     {
@@ -110,8 +110,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Michael",
                         AuthLastName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
-                        Classification = Classification.NonFiction,
-                        Category = Category.SelfHelp
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help"
                     },
                     new Book
                     {
@@ -121,8 +121,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "Richard",
                         AuthLastName = "Branson",
                         Publisher = "Portfolio",
-                        Classification = Classification.NonFiction,
-                        Category = Category.Business
+                        Classification = "Non-Fiction",
+                        Category = "Business"
                     },
                     new Book
                     {
@@ -132,8 +132,8 @@ namespace AmazonStartUp.Models
                         AuthFirstName = "John",
                         AuthLastName = "Grisham",
                         Publisher = "Bantam",
-                        Classification = Classification.Fiction,
-                        Category = Category.Thriller
+                        Classification = "Fiction",
+                        Category = "Thriller"
                     }
                 );
 

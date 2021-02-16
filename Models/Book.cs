@@ -8,24 +8,6 @@ using System.Threading.Tasks;
 
 namespace AmazonStartUp.Models
 {
-    public enum Classification
-    {
-        Fiction,
-        [Description("Non-Fiction")]
-        NonFiction
-    }
-
-    public enum Category
-    {
-        Classic,
-        Biography,
-        Historical,
-        [Description("Self-Help")]
-        SelfHelp,
-        Business,
-        Thriller
-    }
-
     /// <summary>
     /// Represents a Book. Author, Publisher, Category, and Sub-Category are all related to Book, but stored in their own model.
     /// </summary>
@@ -61,14 +43,14 @@ namespace AmazonStartUp.Models
         /// <summary>
         /// First Name of the Author of the Book.
         /// </summary>
+        // TODO Turn Author into separate model.
         [Required]
         public string AuthFirstName { get; set; }
 
         /// <summary>
         /// Middle Name of the Author of the Book (if applicable).
         /// </summary>
-        [Required]
-        public string AuthMidName { get; set; }
+        public string? AuthMidName { get; set; }
 
         /// <summary>
         /// Last Name of the Author of the Book.
@@ -79,19 +61,22 @@ namespace AmazonStartUp.Models
         /// <summary>
         /// Publisher of the Book.
         /// </summary>
+        // TODO Turn Publisher into separate model.
         [Required]
         public string Publisher { get; set; }
 
         /// <summary>
         /// Classification of the Book. Enum.
         /// </summary>
+        // TODO Turn Classification into Static Class.
         [Required]
-        public Classification Classification { get; set; }
+        public string Classification { get; set; }
 
         /// <summary>
         /// Category of the Book within the Classification. Enum.
         /// </summary>
+        // TODO Turn Category into Static Class.
         [Required]
-        public Category Category { get; set; }
+        public string Category { get; set; }
     }
 }
