@@ -14,7 +14,13 @@ namespace AmazonStartUp.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(6,2)", nullable: false),
+                    AuthFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthMidName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
