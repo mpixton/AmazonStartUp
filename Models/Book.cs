@@ -63,14 +63,14 @@ namespace AmazonStartUp.Models
         public string Publisher { get; set; }
 
         /// <summary>
-        /// Classification of the Book. Enum.
+        /// Classification of the Book.
         /// </summary>
         // TODO Turn Classification into Static Class.
         [Required]
         public string Classification { get; set; }
 
         /// <summary>
-        /// Category of the Book within the Classification. Enum.
+        /// Category of the Book within the Classification.
         /// </summary>
         // TODO Turn Category into Static Class.
         [Required]
