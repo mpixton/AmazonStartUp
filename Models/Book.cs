@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AmazonStartUp.Models
 {
@@ -26,7 +21,7 @@ namespace AmazonStartUp.Models
         [RegularExpression(@"^[0-9]{3}-[0-9]{10}$",
             ErrorMessage = "Format: ###-##########")]
         public string ISBN { get; set; }
-        
+
         /// <summary>
         /// Title of the Book. 
         /// </summary>
@@ -37,7 +32,7 @@ namespace AmazonStartUp.Models
         /// Price of the Book.
         /// </summary>
         [Required]
-        [Column(TypeName="decimal(6,2)")]
+        [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
 
         /// <summary>
@@ -50,7 +45,9 @@ namespace AmazonStartUp.Models
         /// <summary>
         /// Middle Name of the Author of the Book (if applicable).
         /// </summary>
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
         public string? AuthMidName { get; set; }
+#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
 
         /// <summary>
         /// Last Name of the Author of the Book.
