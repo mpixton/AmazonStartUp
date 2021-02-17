@@ -20,6 +20,7 @@ namespace AmazonStartUp.Models
         [Required]
         [RegularExpression(@"^[0-9]{3}-[0-9]{10}$",
             ErrorMessage = "Format: ###-##########")]
+        [MaxLength(14)]
         public string ISBN { get; set; }
 
         /// <summary>
@@ -40,11 +41,13 @@ namespace AmazonStartUp.Models
         /// </summary>
         // TODO Turn Author into separate model.
         [Required]
+        [MaxLength(50)]
         public string AuthFirstName { get; set; }
 
         /// <summary>
         /// Middle Name of the Author of the Book (if applicable).
         /// </summary>
+        [MaxLength(50)]
 #pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
         public string? AuthMidName { get; set; }
 #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
@@ -53,6 +56,7 @@ namespace AmazonStartUp.Models
         /// Last Name of the Author of the Book.
         /// </summary>
         [Required]
+        [MaxLength(50)]
         public string AuthLastName { get; set; }
 
         /// <summary>
@@ -60,6 +64,7 @@ namespace AmazonStartUp.Models
         /// </summary>
         // TODO Turn Publisher into separate model.
         [Required]
+        [MaxLength(50)]
         public string Publisher { get; set; }
 
         /// <summary>
@@ -67,6 +72,7 @@ namespace AmazonStartUp.Models
         /// </summary>
         // TODO Turn Classification into Static Class.
         [Required]
+        [MaxLength(11)]
         public string Classification { get; set; }
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace AmazonStartUp.Models
         /// </summary>
         // TODO Turn Category into Static Class.
         [Required]
+        [MaxLength(20)]
         public string Category { get; set; }
     }
 }
