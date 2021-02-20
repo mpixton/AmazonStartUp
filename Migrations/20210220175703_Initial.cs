@@ -15,6 +15,7 @@ namespace AmazonStartUp.Migrations
                     ISBN = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(6,2)", nullable: false),
+                    Pages = table.Column<int>(type: "int", nullable: false),
                     AuthFirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     AuthMidName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     AuthLastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
