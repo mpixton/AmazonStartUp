@@ -1,15 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-@model IQueryable<Book>
+@using AmazonStartUp.Models.ViewModels
+@model BookViewModel
 
 <div class="text-center">
     <h1 class="display-4">Amazon Book Store</h1>
 </div>
 
 <div class="card-columns">
-    @foreach (Book b in Model)
+    @foreach (Book b in Model.Books)
     {
         <div class="card bg-info">
             <div class="card-body">
@@ -30,3 +30,4 @@
         </div>
     }
 </div>   
+<div page-model="@Model.PagingInfo" page-action="Index"></div>
