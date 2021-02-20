@@ -37,6 +37,12 @@ namespace AmazonStartUp.Models
         public decimal Price { get; set; }
 
         /// <summary>
+        /// Number of Pages in the Book.
+        /// </summary>
+        [Required]
+        public int Pages { get; set; }
+
+        /// <summary>
         /// First Name of the Author of the Book.
         /// </summary>
         // TODO Turn Author into separate model.
