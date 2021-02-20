@@ -8,26 +8,35 @@
     <h1 class="display-4">Amazon Book Store</h1>
 </div>
 
-<div class="card-columns">
+<div class="card-deck">
     @foreach (Book b in Model.Books)
     {
         <div class="card bg-info">
             <div class="card-body">
                 <h3 class="text-white">@b.Title</h3>
                 <div class="row col-12">
-                    <div class="text-white col-6">Author: @b.AuthFirstName @b.AuthMidName @b.AuthLastName</div>
-                    <div class="text-white col-6">@b.Classification</div>
+                    <div class="text-white col-12">Author: @b.AuthFirstName @b.AuthMidName @b.AuthLastName</div>
                 </div>
                 <div class="row col-12">
-                    <div class="text-white col-6">$@b.Price</div>
-                    <div class="text-white col-6">@b.Category</div>
+                    <div class="text-white col-12">$@b.Price</div>
                 </div>
                 <div class="row col-12">
-                    <div class="text-white col-6">ISBN: @b.ISBN</div>
-                    <div class="text-white col-6">Publisher: @b.Publisher</div>
+                    <div class="text-white col-12">ISBN: @b.ISBN</div>
+                </div>
+                <div class="row col-12">
+                    <div class="text-white col-12">@b.Classification, @b.Category</div>
+                </div>
+                <div class="row col-12">
+                    <div class="text-white col-12">Pages: @b.Pages</div>
+                    
+                </div>
+                <div class="row col-12">
+                    <div class="text-white col-12">Publisher: @b.Publisher</div>
                 </div>
             </div>
         </div>
     }
 </div>   
-<div page-model="@Model.PagingInfo" page-action="Index"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" 
+     page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" 
+     class="btn-group m-1"></div>
