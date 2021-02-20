@@ -1,4 +1,5 @@
 ﻿using AmazonStartUp.Models;
+using AmazonStartUp.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,15 +16,31 @@ namespace AmazonStartUp.Controllers
 
         private IAmazonRepo _amazonRepo;
 
+        public int PageSize = 5;
+
         public HomeController(ILogger<HomeController> logger, IAmazonRepo repo)
         {
             _logger = logger;
             _amazonRepo = repo;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_amazonRepo.Books);
+            return View(
+                new BookViewModel
+                {
+                    Books = _amazonRepo.Books
+                            .OrderBy(b => b.BookId)
+                            .Skip((page - 1) * PageSize)
+                            .Take(PageSize),
+                    PagingInfo = new PagingInfo
+                    {
+                        CurrentPage = page,
+                        ItemsPerPage = PageSize,
+                        TotalItems = _amazonRepo.Books.Count()
+                    }
+                }
+            );
         }
 
         public IActionResult Privacy()
