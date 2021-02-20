@@ -32,7 +32,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Hugo",
                         Publisher = "Signet",
                         Classification = "Fiction",
-                        Category = "Classic"
+                        Category = "Classic",
+                        Pages = 1488
                     },
                     new Book
                     {
@@ -44,7 +45,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Goodwin",
                         Publisher = "Simon & Schuster",
                         Classification = "Non-Fiction",
-                        Category = "Biography"
+                        Category = "Biography",
+                        Pages = 944
                     },
                     new Book
                     {
@@ -55,7 +57,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Schroeder",
                         Publisher = "Bantam",
                         Classification = "Non-Fiction",
-                        Category = "Biography"
+                        Category = "Biography",
+                        Pages = 832
                     },
                     new Book
                     {
@@ -67,7 +70,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "White",
                         Publisher = "Random House",
                         Classification = "Non-Fiction",
-                        Category = "Biography"
+                        Category = "Biography",
+                        Pages = 864
                     },
                     new Book
                     {
@@ -78,7 +82,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Hillenbrand",
                         Publisher= "Random House",
                         Classification = "Non-Fiction",
-                        Category = "Historical"
+                        Category = "Historical",
+                        Pages = 528
                     },
                     new Book
                     {
@@ -89,7 +94,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Crichton",
                         Publisher = "Vintage",
                         Classification = "Fiction",
-                        Category = "Historical"
+                        Category = "Historical",
+                        Pages = 288
                     },
                     new Book
                     {
@@ -100,7 +106,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Newport",
                         Publisher = "Grand Central Publishing",
                         Classification = "Non-Fiction",
-                        Category = "Self-Help"
+                        Category = "Self-Help",
+                        Pages = 304
                     },
                     new Book
                     {
@@ -111,7 +118,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
                         Classification = "Non-Fiction",
-                        Category = "Self-Help"
+                        Category = "Self-Help",
+                        Pages = 240
                     },
                     new Book
                     {
@@ -122,7 +130,8 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Branson",
                         Publisher = "Portfolio",
                         Classification = "Non-Fiction",
-                        Category = "Business"
+                        Category = "Business",
+                        Pages = 400
                     },
                     new Book
                     {
@@ -133,7 +142,47 @@ namespace AmazonStartUp.Models
                         AuthLastName = "Grisham",
                         Publisher = "Bantam",
                         Classification = "Fiction",
-                        Category = "Thriller"
+                        Category = "Thriller",
+                        Pages = 642
+                    },
+                    new Book
+                    {
+                        ISBN = "978-0765326355",
+                        Price = 23.64M,
+                        Title = "The Way of Kings",
+                        AuthFirstName = "Brandon",
+                        AuthMidName = "",
+                        AuthLastName = "Sanderson",
+                        Publisher = "Tor Books",
+                        Classification = "Fiction",
+                        Category = "High Fantasy",
+                        Pages = 1007
+                    },
+                    new Book
+                    {
+                        ISBN = "978-0143126460",
+                        Price = 11.77M,
+                        Title = "Getting Things Done",
+                        AuthFirstName = "David",
+                        AuthMidName = "",
+                        AuthLastName = "Allen",
+                        Publisher = "Penguin Books",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
+                        Pages = 267
+                    },
+                    new Book
+                    {
+                        ISBN = "978-1594200090",
+                        Price = 16.98M,
+                        Title = "Alexander Hamilton",
+                        AuthFirstName = "Ron",
+                        AuthMidName = "",
+                        AuthLastName = "Chernow",
+                        Publisher = "Penguin Press",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
+                        Pages = 818
                     }
                 );
 
