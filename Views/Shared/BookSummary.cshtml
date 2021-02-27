@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using AmazonStartUp.Models;
+@model Book;
+
+<div class="card bg-info">
+    <div class="card-body">
+        <h3 class="text-white">@Model.Title</h3>
+        <div class="row col-12">
+            <div class="text-white col-12">Author: @Model.AuthFirstName @Model.AuthMidName @Model.AuthLastName</div>
+        </div>
+        <div class="row col-12">
+            <div class="text-white col-12">$@Model.Price</div>
+        </div>
+        <div class="row col-12">
+            <div class="text-white col-12">ISBN: @Model.ISBN</div>
+        </div>
+        <div class="row col-12">
+            <div class="text-white col-12">@Model.Classification, @Model.Category</div>
+        </div>
+        <div class="row col-12">
+            <div class="text-white col-12">Pages: @Model.Pages</div>
+        </div>
+        <div class="row col-12">
+            <div class="text-white col-12">Publisher: @Model.Publisher</div>
+        </div>
+    </div>
+</div>
