@@ -11,30 +11,7 @@
 <div class="card-deck">
     @foreach (Book b in Model.Books)
     {
-        <div class="card bg-info">
-            <div class="card-body">
-                <h3 class="text-white">@b.Title</h3>
-                <div class="row col-12">
-                    <div class="text-white col-12">Author: @b.AuthFirstName @b.AuthMidName @b.AuthLastName</div>
-                </div>
-                <div class="row col-12">
-                    <div class="text-white col-12">$@b.Price</div>
-                </div>
-                <div class="row col-12">
-                    <div class="text-white col-12">ISBN: @b.ISBN</div>
-                </div>
-                <div class="row col-12">
-                    <div class="text-white col-12">@b.Classification, @b.Category</div>
-                </div>
-                <div class="row col-12">
-                    <div class="text-white col-12">Pages: @b.Pages</div>
-                    
-                </div>
-                <div class="row col-12">
-                    <div class="text-white col-12">Publisher: @b.Publisher</div>
-                </div>
-            </div>
-        </div>
+        <partial name="BookSummary" model="b" />
     }
 </div>   
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" 
