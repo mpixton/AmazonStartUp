@@ -4,10 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AmazonStartUp.Infrastructure
 {
@@ -37,6 +34,9 @@ namespace AmazonStartUp.Infrastructure
         /// Action for the Tag to execute.
         /// </summary>
         public string PageAction { get; set; }
+
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
         /// <summary>
         /// Determines if the Tag Helper will use CSS to display each link.
@@ -70,11 +70,12 @@ namespace AmazonStartUp.Infrastructure
             var result = new TagBuilder("div");
 
             // Loop through the total number of pages in the PageModel class.
-            for (int i = 1; i <= PageModel.TotalPages; i++)
+            for (var i = 1; i <= PageModel.TotalPages; i++)
             {
                 // For each page, create a new a tag with the URL after the pattern /?page=i.
                 var tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 // Checks if we have enabled extra CSS classes for our Tag Helper.
                 if (PageClassesEnabled)

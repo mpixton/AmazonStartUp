@@ -24,12 +24,13 @@ namespace AmazonStartUp.Controllers
             _amazonRepo = repo;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             return View(
                 new BookViewModel
                 {
                     Books = _amazonRepo.Books
+                            .Where(p => category == null || p.Category == category)
                             .OrderBy(b => b.BookId)
                             .Skip((page - 1) * PageSize)
                             .Take(PageSize),
@@ -37,8 +38,9 @@ namespace AmazonStartUp.Controllers
                     {
                         CurrentPage = page,
                         ItemsPerPage = PageSize,
-                        TotalItems = _amazonRepo.Books.Count()
-                    }
+                        TotalItems = category is null ? _amazonRepo.Books.Count() : _amazonRepo.Books.Where(x => x.Category == category).Count()
+                    },
+                    CurrentCategory = category
                 }
             );
         }
