@@ -30,7 +30,7 @@ namespace AmazonStartUp.Controllers
                 new BookViewModel
                 {
                     Books = _amazonRepo.Books
-                            .Where(p => category == null || p.Category == category)
+                            .Where(b => category == null || b.Category == category)
                             .OrderBy(b => b.BookId)
                             .Skip((page - 1) * PageSize)
                             .Take(PageSize),
