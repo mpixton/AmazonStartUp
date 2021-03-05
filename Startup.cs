@@ -56,15 +56,9 @@ namespace AmazonStartUp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "categorypage",
-                    pattern: "{category}/{page:int}",
-                    new { Controller = "Home", action = "Index" }
-                    );
-
-                endpoints.MapControllerRoute(
                     name: "page",
                     pattern: "Books/{page:int}",
-                    new { Controller = "Home", action = "index" }
+                    new { Controller = "Home", action = "Index" }
                     );
 
                 endpoints.MapControllerRoute(
@@ -74,10 +68,11 @@ namespace AmazonStartUp
                     );
 
                 endpoints.MapControllerRoute(
-                    name: "pagination",
-                    pattern: "Books/{page}",
-                    new { Controller = "Home", action = "Index" }
-                    );
+                   name: "categorypage",
+                   pattern: "{category}/{page:int}",
+                   new { Controller = "Home", action = "Index" }
+                   );
+
 
                 endpoints.MapDefaultControllerRoute();
             });
