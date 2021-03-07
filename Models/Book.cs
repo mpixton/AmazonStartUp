@@ -88,5 +88,10 @@ namespace AmazonStartUp.Models
         [Required]
         [MaxLength(20)]
         public string Category { get; set; }
+
+        public string GetDisplayName()
+        {
+            return AuthMidName is null ? $"{AuthFirstName} {AuthLastName}" : $"{AuthFirstName} {AuthMidName} {AuthLastName}";
+        }
     }
 }
