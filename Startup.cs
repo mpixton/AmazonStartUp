@@ -25,12 +25,23 @@ namespace AmazonStartUp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // add controllers
             services.AddControllersWithViews();
+
+            // add database connection
             services.AddDbContext<AmazonDBContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:AmazonStartUpConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:AmazonStartUpConnection"]);
             });
+
             services.AddScoped<IAmazonRepo, EFAmazonRepo>();
+
+            // add Razor Pages
+            services.AddRazorPages();
+
+            // add sessions
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +60,8 @@ namespace AmazonStartUp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -57,7 +70,7 @@ namespace AmazonStartUp
             {
                 endpoints.MapControllerRoute(
                     name: "page",
-                    pattern: "Books/{page:int}",
+                    pattern: "Books/{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
 
@@ -69,12 +82,13 @@ namespace AmazonStartUp
 
                 endpoints.MapControllerRoute(
                    name: "categorypage",
-                   pattern: "{category}/{page:int}",
+                   pattern: "{category}/{pageNum:int}",
                    new { Controller = "Home", action = "Index" }
                    );
 
-
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
