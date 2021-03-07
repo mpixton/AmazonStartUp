@@ -8,7 +8,7 @@
     <div class="card-body">
         <h3 class="text-white">@Model.Title</h3>
         <div class="row col-12">
-            <div class="text-white col-12">Author: @Model.AuthFirstName @Model.AuthMidName @Model.AuthLastName</div>
+            <div class="text-white col-12">Author: @Model.GetDisplayName()</div>
         </div>
         <div class="row col-12">
             <div class="text-white col-12">$@Model.Price</div>
@@ -25,5 +25,15 @@
         <div class="row col-12">
             <div class="text-white col-12">Publisher: @Model.Publisher</div>
         </div>
+    </div>
+
+    <div class="d-flex justify-content-start p-3">
+        <form id="@Model.BookId " asp-page="/Cart" method="post">
+            <input type="hidden" asp-for="BookId" />
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <button class="btn-success">
+                Buy
+            </button>
+        </form>
     </div>
 </div>
