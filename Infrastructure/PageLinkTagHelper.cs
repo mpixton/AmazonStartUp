@@ -74,7 +74,7 @@ namespace AmazonStartUp.Infrastructure
             {
                 // For each page, create a new a tag with the URL after the pattern /?page=i.
                 var tag = new TagBuilder("a");
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 // Checks if we have enabled extra CSS classes for our Tag Helper.

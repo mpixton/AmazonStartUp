@@ -12,6 +12,11 @@
 <div class="row mt-3">
     <div class="col-2">
         <vc:navigation-menu />
+        <vc:cart-summary />
+        <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+         page-url-category="@Model.CurrentCategory"
+         class="btn-group m-1"></div>
     </div>
     <div class="col-2">
 
@@ -22,8 +27,5 @@
             <partial name="BookSummary" model="b" />
         }
     </div>
-    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
-         page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
-         page-url-category="@Model.CurrentCategory"
-         class="btn-group m-1"></div>
+    
 </div>
