@@ -13,19 +13,19 @@ namespace AmazonStartUp.Pages
     {
         private IAmazonRepo _repo;
 
-        public CartModel(IAmazonRepo repo)
-        {
-            _repo = repo;
-        }
-
         public Cart Cart { get; set; }
 
         public string ReturnUrl { get; set; }
 
+        public CartModel(IAmazonRepo repo, Cart cartService)
+        {
+            _repo = repo;
+            Cart = cartService;
+        }
+
         public void OnGet(string returnUrl)
         {
-            string ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            ReturnUrl = returnUrl ?? "/";
         }
 
         public IActionResult OnGetBack(string returnUrl)
@@ -37,11 +37,7 @@ namespace AmazonStartUp.Pages
         {
             Book book = _repo.Books.FirstOrDefault(b => b.BookId == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
-
             Cart.AddItem(book, 1);
-
-            HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
