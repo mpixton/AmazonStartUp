@@ -18,7 +18,7 @@ namespace AmazonStartUp.Models
         /// </summary>
         /// <param name="book">Instance of object Book to purchase.</param>
         /// <param name="quantity">Number Books book to purchase.</param>
-        public void AddItem(Book book, int quantity)
+        public virtual void AddItem(Book book, int quantity)
         {
             // Check if the Book is already in the cart.
             CartLine line = Lines
@@ -45,20 +45,20 @@ namespace AmazonStartUp.Models
         /// Removes the CartLine item associated with "Book" from the Cart.
         /// </summary>
         /// <param name="book"></param>
-        public void RemoveLine(Book book) =>
+        public virtual void RemoveLine(Book book) =>
             Lines.RemoveAll(b => b.Book.BookId == book.BookId);
 
         /// <summary>
         /// Resets the Cart.
         /// </summary>
-        public void Clear() => 
+        public virtual void Clear() => 
             Lines.Clear();
 
         /// <summary>
         /// Computes the total price of all Books in the Cart.
         /// </summary>
         /// <returns>Total of Book Price times the Quantity.</returns>
-        public decimal ComputeTotal() =>
+        public virtual decimal ComputeTotal() =>
             Lines.Sum(b => b.Book.Price * b.Quantity);
 
         /// <summary>
