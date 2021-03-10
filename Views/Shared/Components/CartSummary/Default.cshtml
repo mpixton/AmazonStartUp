@@ -9,14 +9,21 @@
 <div class="">
     @if(Model.Lines.Count() > 0)
     {
-        <small class="navbar-text">
+        <div class="navbar-text">
             <b>Your cart:</b>
             @Model.Lines.Sum(x => x.Quantity) item(s)
             @Model.ComputeTotal().ToString("c")
-        </small>
+        </div>
+    } else
+    {
+        <div class="navbar-text">
+            <p>You don't have any items in your cart yet!</p>
+        </div>
     }
-    <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Cart"
-       asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
-        <i class="fa fa-shopping-cart"></i>
-    </a>
+    <div class="text-center">
+        <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Cart"
+           asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+            <i>View Your Cart</i>
+        </a>
+    </div>
 </div>
